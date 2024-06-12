@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://shaliniagrawal2512.github.io/chatbot",
+  "homepage": "https://shaliniagrawal2512.github.io/chatbot/",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
