@@ -16,9 +16,11 @@ open new terminal
 
 ### UI
 
-![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/46e825b6-4d38-409c-b34b-44f03217c5db)
-![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/ef441611-f090-48f8-8f3b-e4139310a35e)
-![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/4b5d66b1-ced3-48c3-a9e0-b7907e5580f1)
+![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/b6ae6631-acd5-466a-bf7d-db4868991333)
+![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/bddf4a73-b90f-4215-a2ac-efd9efe247c2)
+![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/156cbb25-e6a5-4b2d-8599-c1a7c32d82fd)
+![image](https://github.com/shaliniagrawal2512/chatbot/assets/76595515/62e80838-857e-4d33-9b81-451472d88ce4)
+
 
 
 
