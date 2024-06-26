@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import CustomizedInput from "../components/shared/customized-input";
 import { IoIosLogIn } from 'react-icons/io'
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
-
+import { Color } from '../colors'
 const Signup = () => {
   const auth = useAuthContext();
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Signup = () => {
   return (
     <Box width={"100%"}  display="flex" flex={1}>
       <Box padding={8} mt={8} display={{ md: "flex", sm: "none", xs: "none" }}>
-        <img src="airobot.png" alt="Robot" style={{ width: "400px" }} />
+        <img src="airobot3.png" alt="Robot" style={{ width: "600px",  filter:'hue-rotate(15deg)'}}/>
       </Box>
       <Box
         display={"flex"}
@@ -51,7 +51,7 @@ const Signup = () => {
           style={{
             margin: "auto",
             padding: "30px",
-            boxShadow: "10px 10px 20px #000",
+            boxShadow: `10px 10px 20px ${Color.secondary}`,
             borderRadius: "10px",
             border: "none",
           }}
@@ -74,24 +74,32 @@ const Signup = () => {
             <CustomizedInput type="text" name="name" label="Name" />
             <CustomizedInput type="email" name="email" label="Email" />
             <CustomizedInput type="password" name="password" label="Password" />
-            <Button
+            <button
               type="submit"
-              sx={{
-                px: 2,
-                py: 1,
-                mt: 2,
-                width: "400px",
-                borderRadius: 2,
-                bgcolor: "#00fffc",
-                ":hover": {
-                  bgcolor: "white",
-                  color: "black",
-                },
+              className="secondary"
+              style={{
+                width: "100%",
+                borderRadius: 5,
+                border: "none",
+                marginTop: "20px",
+                padding: "10px",
               }}
-              endIcon={<IoIosLogIn />}
             >
-              Signup
-            </Button>
+              <text
+                className="nav-link"
+                style={{
+                  lineHeight: "20px",
+                  gap: "5px",
+                  display: "flex",
+                  justifyContent: "center",
+                  fontSize: "20px",
+                }}
+              >
+                {" "}
+                <IoIosLogIn style={{ strokeWidth: "15px" }} size={"22px"} />
+                Signup
+              </text>
+            </button>
           </Box>
         </form>
       </Box>

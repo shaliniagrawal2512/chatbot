@@ -1,26 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;800&family=Work+Sans&display=swap");
+:root {
+  --background-color: #1E1E1E;
+  --surface-color: #2D2D2D;
+  --surface-secondary-color: #4b4a4afa;
+  --primary-color: #00E5C1;
+  --secondary-color: #00D0F4 ;
+  --profile-color:#510067;
+  --error-color: #a90606;
+  --text-light-color: #001F34;
+  --text-dark-primary-color: #ffffff;
+  --text-dark-secondary-color: #f8f8ff;
+  --hover-primary-color: #00ffbb;
+  --hover-secondary-color: #3398ef;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #05101c;
-  color: white;
+  background:var(--background-color);
+  color: var(--text-dark-primary-color);
   font-family: "Roboto Slab", serif;
 }
 
 .image-inverted {
   filter: invert(100%);
 }
+.primary{
+  background-color: var(--primary-color);
+  color: var(--text-light-color);
+}
+.primary:hover {
+  background-color: var(--hover-primary-color);
+  color:black
+}
+.secondary{
+  background-color: var(--secondary-color);
+  color: var(--text-dark-primary-color);
+  letter-spacing: 1px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.secondary:hover {
+  background-color: var(--hover-secondary-color);
+  color: var(--text-dark-secondary-color)
+}
 .nav-link {
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Times New Roman', Times, serif;
   margin-right: 10px;
   margin-left: 10px;
   padding: 8px 20px;
   border-radius: 10px;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 .MuiOutlinedInput-input-root.Mui-focused,
 .MuiOutlinedInput-notchedOutline {

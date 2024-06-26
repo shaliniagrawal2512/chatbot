@@ -13,9 +13,9 @@ const NotFound = () => {
       }}
     >
       <img
-        src="robot.png"
+        src="robot1.png"
         alt="robot"
-        style={{ width: "200px", margin: "auto" }}
+        style={{ width: "400px", margin: "auto" }}
       />
       <Typography sx={{fontSize:'30px', fontWeight:'600'}}>ERROR 404: PAGE NOT FOUND !</Typography>
     </Box>

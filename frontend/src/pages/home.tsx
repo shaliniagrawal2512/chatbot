@@ -1,9 +1,13 @@
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Box,  useMediaQuery, useTheme } from '@mui/material';
 import Footer from '../components/footer/Footer';
 import TypingAnim from '../components/type-animation';
+import NavigationLink from '../components/shared/navigation-link';
+import { useAuthContext } from '../context/auth-context';
+import { Color } from '../colors';
 
 const Home = () => {
   const theme = useTheme();
+  const auth = useAuthContext();
   const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box width={"100%"} height={"100%"} overflow='auto'>
@@ -20,29 +24,57 @@ const Home = () => {
         <Box>
           <TypingAnim />
         </Box>
+        <Box sx={{ display: "flex", mx: "auto",alignItems:'center', gap:'50px', mt:8 }}>
+           <img
+            src="robot2.png"
+            alt="robot"
+            style={{ width: "300px", margin: "auto" }}
+          />
+          <div style={{display:'flex', flexDirection:'column',gap:'20px'}}>
+            {auth?.isLoggedIn ? (
+              <>
+                <NavigationLink
+                  type='primary'
+                  width='200px'
+                  to="/chat"
+                  text="Go To Chat"
+                />
+                <NavigationLink
+                  type='secondary'
+                  width='200px'
+                  to="/"
+                  text="logout"
+                  onClick={auth?.logout}
+                />
+              </>
+            ) : (
+              <>
+                <NavigationLink
+                  type='primary'
+                  width='200px'
+                  to="/login"
+                  text="Login"
+                />
+                <NavigationLink
+                  type='secondary'
+                  to="/signup"
+                   width='200px'
+                  text="Signup"
+                />
+              </>
+            )}
+          </div>
+        </Box>
         <Box
           sx={{
             width: "100%",
             display: "flex",
             flexDirection: { md: "row", xs: "column", sm: "column" },
             gap: 5,
-            my: 10,
+            my: 8
           }}
         >
-          <img
-            src="robot.png"
-            alt="robot"
-            style={{ width: "200px", margin: "auto" }}
-          />
-          <img
-            className="image-inverted rotate"
-            src="openai.png"
-            alt="openai"
-            style={{ width: "200px", margin: "auto" }}
-          />
-        </Box>
-        <Box sx={{ display: "flex", mx: "auto" }}>
-          <img
+            <img
             src="chat.png"
             alt="chatbot"
             style={{
@@ -50,13 +82,13 @@ const Home = () => {
               margin: "auto",
               width: isBelowMd ? "80%" : "60%",
               borderRadius: 20,
-              boxShadow: "-5px -5px 105px #64f3d5",
-              marginTop: 20,
+              boxShadow: `-5px -5px 105px ${Color.primary}`,
               marginBottom: 20,
               padding: 10,
             }}
           />
         </Box>
+        
       </Box>
       <Footer />
     </Box>

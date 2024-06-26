@@ -19,12 +19,12 @@ connectToDatabase().then(()=>{
 // middlewares- are the functions which handle request so next is middleware which is used to move to next middleware this is a simple route
 
 // postman - testing platfrom for teting any kind of api  that could be graphql api or normal api 
-app.get("/hello", (req, res, next)=>{
+// app.get("/hello", (req, res, next)=>{
  
-  return res.send("hello");
-})
-app.post("/user/:id", (req, res, next)=>{
-  console.log(req.params.id);
-  return res.send("Hello world to my life " + req.params.id);
-})
+//   return res.send("hello");
+// })
+// app.post("/user/:id", (req, res, next)=>{
+//   console.log(req.params.id);
+//   return res.send("Hello world to my life " + req.params.id);
+// })
 

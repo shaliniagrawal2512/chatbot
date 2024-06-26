@@ -1,23 +1,24 @@
 import { TypeAnimation } from "react-type-animation";
+import { Color } from "../colors";
 
 const TypingAnim = () => {
   return (
     <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed once, initially
-        "Chat With Your OWN AI",
+        "Bridging human interaction and AI with seamless precision",
         1000,
-        "Built With OpenAI 🤖",
+        "Your intelligent assistant, powered by neural networks. 🤖",
         2000,
-        "Your Own Customized ChatGPT 💻",
+        "Your Own Customized Neuro--Sphere 💻",
         1500,
       ]}
       speed={50}
       style={{
-        fontSize: '4.5vw',
+        fontSize: '3vw',
         color: "white",
         display: "inline-block",
-        textShadow: "1px 1px 20px #000"
+        textShadow: `1px 1px 20px ${Color.textLight}`
       }}
       repeat={Infinity}
     />

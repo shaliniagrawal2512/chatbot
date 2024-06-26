@@ -12,7 +12,7 @@ function App() {
   const auth = useAuthContext();
   return (
     <main style={{ height: "100vh" }}>
-      <Header />
+       <Header/>
       <Box
         sx={{
           display: "flex",

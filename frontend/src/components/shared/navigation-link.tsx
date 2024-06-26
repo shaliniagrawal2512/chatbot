@@ -2,18 +2,27 @@ import { Link } from "react-router-dom";
 
 type Props = {
   to: string;
-  bg: string;
+  type:'primary'|'secondary'
   text: string;
-  textColor: string;
+  width?:string;
   onClick?: () => Promise<void>;
 };
-const NavigationLink = (props: Props) => {
+ 
+
+const NavigationLink = (props: Props) =>{
+ const width = props.width?  props.width :  'fit-content' 
+ const handleClick = ()=>{
+  props.onClick&&  props.onClick()
+  }
+  const style: React.CSSProperties ={
+      width:width, textWrap:'nowrap', textAlign:'center', height:'30px', alignContent:'center'
+  }
   return (
     <Link
-      onClick={props.onClick}
-      className="nav-link"
+      onClick={handleClick}
+      className= {`nav-link ${props.type}`}
       to={props.to}
-      style={{ background: props.bg, color: props.textColor, width:'fit-content', textWrap:'nowrap' }}
+      style={style}
     >
       {props.text}
     </Link>

@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useAuthContext } from "../context/auth-context";
 import ChatItem from "../components/chat/chat-item";
 import { Message } from "../types/chat-types";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { IoMdSend } from "react-icons/io";
 import { getUserChats, sendChatRequest } from "../helpers/api-communicators";
 import DescriptionBox from "../components/chat/description-box";
+import { Color } from "../colors";
 import toast from "react-hot-toast";
 
 const Chat = () => {
@@ -61,11 +62,11 @@ const Chat = () => {
     <Box
       sx={{
         display: "flex",
-        padding: 5,
-        paddingTop:7,
+        px: 5,
+        py:3,
         gap: 5,
         flexDirection: 'row',
-        height:'calc(100vh - 160px)',
+        height:'calc(100vh - 115px)',
         overflowX:'hidden'
       }}
     >
@@ -79,19 +80,6 @@ const Chat = () => {
           justifyContent:'space-between'
         }}
       >
-       <Typography
-          sx={{
-            fontSize: "40px",
-            color: "white",
-            mb: 2,
-            fontWeight: "600",
-            textAlign:'center',
-            paddingBottom:'10px',
-            lineHeight:'1'
-          }}
-        >
-          ASK : ANYTHING
-        </Typography>
         <Box
           ref= {scrollRef}
           sx={{
@@ -102,8 +90,9 @@ const Chat = () => {
             overflowX: "hidden",
             overflowY: "auto",
             scrollBehavior: "smooth",
-            gap: "10px",
-            my: "10px"
+            gap: "8px",
+            scrollbarWidth:"none",
+            scrollbarColor: 'transparent',
           }}
         >
           {chatMessages.map((chat, index) => (
@@ -115,7 +104,7 @@ const Chat = () => {
             height: "60px",
             borderRadius: 8,
             marginTop:'15px',
-            backgroundColor: "rgb(17,27,39)",
+            backgroundColor: Color.surface,
             display: "flex",
           }}
         >
@@ -129,11 +118,11 @@ const Chat = () => {
               padding: "30px",
               border: "none",
               outline: "none",
-              color: "white",
+              color: Color.textDarkSecondary,
               fontSize: "20px",
             }}
           />
-          <IconButton onClick={handleSubmit} sx={{ color: "white", mx: 1 }}>
+          <IconButton onClick={handleSubmit} sx={{ color:Color.textDarkPrimary, mx: 1 }}>
             <IoMdSend />
           </IconButton>
         </div>
