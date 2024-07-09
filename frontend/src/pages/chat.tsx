@@ -67,7 +67,8 @@ const Chat = () => {
         gap: 5,
         flexDirection: 'row',
         height:'calc(100vh - 115px)',
-        overflowX:'hidden'
+        overflow:'hidden',
+        width:'100%'
       }}
     >
       <DescriptionBox setChatMessages={setChatMessages} />
@@ -77,7 +78,8 @@ const Chat = () => {
           flexDirection: "column",
           overflow:'hidden',
           flex:'1',
-          justifyContent:'space-between'
+          justifyContent:'space-between',
+          width:'100%'
         }}
       >
         <Box

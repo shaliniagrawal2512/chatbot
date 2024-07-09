@@ -17,17 +17,19 @@ function App() {
         sx={{
           display: "flex",
           flex:1,
+          width:'100%',
           height: "calc(100vh - 64px)",
+          marginBottom:'20px'
         }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
           {auth?.isLoggedIn && auth.user && (
             <Route path="/chat" element={<Chat />} />
           )}
-          <Route path="signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Box>
     </main>

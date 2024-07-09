@@ -39,7 +39,9 @@ const DescriptionBox = (props: Props) => {
         flex: 0.2,
         flexDirection: "column",
         alignItems: "center",
-        gap:'15px'
+        gap:'15px',
+        scrollbarWidth:'none',
+        overflowY:'auto'
       }}
     >
          <Avatar

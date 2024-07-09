@@ -53,11 +53,11 @@ const ChatItem = ({
           messageBlocks.length &&
           messageBlocks.map((block) =>
             isCodeBlock(block) ? (
-              <SyntaxHighlighter style={materialDark} fontSize="15px" language="javascript">
+              <SyntaxHighlighter style={materialDark} fontSize="15px" language="javascript" key={block.length}>
                 {block}
               </SyntaxHighlighter>
             ) : (
-              <Typography sx={{ fontSize: "15px" }}>{block}</Typography>
+              <Typography sx={{ fontSize: "15px" }}  key={block.length}>{block}</Typography>
             )
           )}
       </Box>
@@ -78,12 +78,12 @@ const ChatItem = ({
       </Avatar>
       <Box overflow={'auto'} sx={{scrollbarWidth:'none'}}>
         {!messageBlocks && (
-          <Typography sx={{ fontSize: "15px" }}>{content}</Typography>
+          <Typography sx={{ fontSize: "15px" }} >{content}</Typography>
         )}
         {messageBlocks &&
           messageBlocks.length &&
           messageBlocks.map((block) =>
-              <Typography sx={{ fontSize: "15px" }}>{block}</Typography>
+              <Typography sx={{ fontSize: "15px" }}  key={block.length}>{block}</Typography>
 
           )}
       </Box>
